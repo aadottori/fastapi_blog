@@ -19,7 +19,6 @@ router = APIRouter(
 get_db = database.get_db
 
 
-pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 @router.get("/", response_model=List[schemas.ShowUser])
@@ -29,7 +28,7 @@ def get_all_users(db: Session = Depends(database.get_db)):
 
 @router.post("/", response_model=schemas.ShowUser)
 def create_user(request: schemas.User, db: Session = Depends(get_db)):
-    return user.create_user(db, request)
+    return user.create_user(request, db)
 
 
 @router.get("/{id}", response_model = schemas.ShowUser)

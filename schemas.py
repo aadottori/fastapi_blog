@@ -20,6 +20,14 @@ class User(BaseModel):
     password: str
 
 
+"""LOGIN SCHEMAS"""
+class Login(BaseModel):
+    username: str
+    password: str
+
+
+
+
 """SHOW SCHEMAS"""
 class ShowUser(BaseModel):
     name: str

@@ -4,9 +4,12 @@ parent_dir = os.path.dirname(current_dir)
 sys.path.insert(0, parent_dir) 
 
 from sqlalchemy.orm import Session
-import models, schemas
+import models, schemas, hashing
 from fastapi import HTTPException, status
+from passlib.context import CryptContext
 
+
+pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 def get_all_users(db: Session):

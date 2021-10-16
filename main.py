@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import models, database
 from database import engine, get_db
-from routers import blog, user
+from routers import blog, user, authentication
 import uvicorn
 
 
@@ -12,6 +12,7 @@ app = FastAPI()
 
 get_db = database.get_db
 
+app.include_router(authentication.router)
 app.include_router(blog.router)
 app.include_router(user.router)
 
