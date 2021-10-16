@@ -25,7 +25,7 @@ def create_blog(request: schemas.Blog, db: Session):
     return new_blog
 
 
-def show_single_blog(id, db: Session):
+def get_single_blog(id, db: Session):
     blog = db.query(models.Blog).filter(models.Blog.id == id).first()
     if not blog:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Blog with id {id} not available.")
