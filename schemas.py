@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 
 """BLOG SCHEMAS"""
@@ -26,6 +26,15 @@ class Login(BaseModel):
     password: str
 
 
+
+"""TOKEN SCHEMAS"""
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    username: Optional[str] = None
 
 
 """SHOW SCHEMAS"""
