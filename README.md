@@ -1,4 +1,4 @@
-# learning-fastapi
+# FastAPI Blog
 
 
-In this project I learned about Fast API, how to use it to create a simple API with a complete CRUD interface on Swagger.
+This project was aimed at learning how to use FastAPI. 
